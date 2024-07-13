@@ -26,12 +26,37 @@
 - 전반적으로 베깅이 더 나은 모델을 만듬
 - OOB 평가 : 베깅에서 out-of-bag로 훈련에 사용되지 않은 나머지 샘플을 각 예측기가 평가해 그 평균으로 얻은 평가 점수
 
-![7-4](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/pv.png)
-![7-4](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-5.png)
+![pv](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/pv.png)
+![7-5](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-5.png)
 - bias : 편향, variance : 분산
 - 학습이나 예측을 병렬로 수행할 수 있어서 인기가 높음
 
 ## 7.3 랜덤 패치와 랜덤 서브스페이스
+- 샘플 뿐 아니라 특성 샘플링도 지원
+- 랜덤 패치 방식 : 특성과 샘플을 모두 샘플링
+- 랜덤 서브스페이스 방식 : 특성만 샘플링
 ## 7.4 랜덤 포레스트
+- 베깅 방법(또는 페이스팅)을 적용한 결정 트리 앙상블
+- 엑스트라 트리 : 트리를 더욱 랜덤하게 만들기 위해 최적의 임곗값을 찾는 대신 후보 특성을 사용해 랜덤으로 분할한 다음 그중 최상의 분할을 선택하는 방식, 편향이 늘어나는 대신 분산이 낮아짐
+- 어떤 특성을 사용한 노드가 평균적으로 불순도를 얼마나 감소시키는지 확인하여 특성의 중요도를 측정 가능
+
+![7-6](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-6.png)
 ## 7.5 부스팅
+- 약한 학습기 여러 개를 연결하여 강한 학습기를 만드는 앙상블 방법
+- 앞의 모델을 보완해 나가면서 일련의 예측기를 학습 시키는 아이디어
+
+![7-7](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-7.png)
+![adb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/adaboost.png)
+- AdaBoost : 이전 예측기를 보완하는 새로운 예측기를 만드는 방법은 이전 모델이 과소적합했던 훈련 샘플의 가중치를 더 높이는 것
+- 첫 번째 약한 학습기가 첫 번째 분류 기준(D1)으로 +와 -를 분류
+- 잘못 분류된 데이터에 대해 가중치를 부여(두 번째 그림에서 커진 + 표시)
+- 두 번째 약한 학습기가 두 번째 분류 기준(D2)으로 +와 -를 다시 분류
+- 잘못 분류된 데이터에 대해 가중치를 부여(세 번째 그림에서 커진 - 표시)
+- 세 번째 약한 학습기가 세 번째 분류 기준(D3)으로 +와 -를 다시 분류해서 오류 데이터를 찾음
+- 마지막으로 분류기들을 결합하여 최종 예측 수행(네 번째 그림)
+
+![gb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/gb.png)
+- 그레이디언트 부스팅 : 샘플의 가중치를 수정하는 대신 이전 예측기가 만든 잔여 오차에 새로운 예측기를 학습 시킴
+- 7.5.2 진행 중...
+
 ## 7.6 스태킹
