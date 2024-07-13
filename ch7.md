@@ -24,7 +24,7 @@
 - 편향 : 베깅 < 페이스팅 (페이스팅이 더 우수)
 - 분산 : 베깅 > 페이스팅 (베깅이 더 우수)
 - 전반적으로 베깅이 더 나은 모델을 만듬
-- OOB 평가 : out-of-bag로 훈련에 사용되지 않은 나머지 샘플을 각 예측기가 평가해 그 평균으로 얻은 평가 점수
+- OOB 평가 : 베깅에서 out-of-bag로 훈련에 사용되지 않은 나머지 샘플을 각 예측기가 평가해 그 평균으로 얻은 평가 점수
 
 ![7-4](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/pv.png)
 ![7-4](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-5.png)
