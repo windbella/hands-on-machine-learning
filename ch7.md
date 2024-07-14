@@ -26,7 +26,8 @@
 - 전반적으로 베깅이 더 나은 모델을 만듬
 - OOB 평가 : 베깅에서 out-of-bag로 훈련에 사용되지 않은 나머지 샘플을 각 예측기가 평가해 그 평균으로 얻은 평가 점수
 
-![pv](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/pv.png)
+![pv](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/pv.png)   
+[[이미지 출처]](https://datacookbook.kr/48)
 ![7-5](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-5.png)
 - bias : 편향, variance : 분산
 - 학습이나 예측을 병렬로 수행할 수 있어서 인기가 높음
@@ -46,7 +47,8 @@
 - 앞의 모델을 보완해 나가면서 일련의 예측기를 학습 시키는 아이디어
 
 ![7-7](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-7.png)
-![adb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/adaboost.png)
+![adb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/adaboost.png)   
+[[이미지 출처]](https://bommbom.tistory.com/entry/Boosting-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-Adaboost-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC)
 - AdaBoost : 이전 예측기를 보완하는 새로운 예측기를 만드는 방법은 이전 모델이 과소적합했던 훈련 샘플의 가중치를 더 높이는 것
 - 첫 번째 약한 학습기가 첫 번째 분류 기준(D1)으로 +와 -를 분류
 - 잘못 분류된 데이터에 대해 가중치를 부여(두 번째 그림에서 커진 + 표시)
@@ -55,12 +57,13 @@
 - 세 번째 약한 학습기가 세 번째 분류 기준(D3)으로 +와 -를 다시 분류해서 오류 데이터를 찾음
 - 마지막으로 분류기들을 결합하여 최종 예측 수행(네 번째 그림)
 
-![gb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-9.png)
-![gb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/gb.png)
+![7-9](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-9.png)
+![gb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/gb.png)   
+[[이미지 출처]](https://beavekim23.tistory.com/3)
 - 그레이디언트 부스팅 : 샘플의 가중치를 수정하는 대신 이전 예측기가 만든 잔여 오차에 새로운 예측기를 학습 시킴, 각 트리의 예측값을 합쳐서 최종 예측 수행
 - 히스토그램 기반 그레이디언트 부스팅 : 특성의 구간을 분할하여 평가해야 하는 임곗값의 수를 크게 줄여 성능을 향상시킴, 규제처럼 작동해서 정밀도 손실을 유발하므로 데이터 셋에 따라서 과대 적합을 줄이는 데 도움이 될 수도 있고 과소 적합을 유발할 수도 있음
 ## 7.6 스태킹
 - 앙상블에 속한 모든 예측기의 예측을 취합하는 간단한 함수 대신 취합하는 모델을 훈련 시키는 아이디어
 
-![gb](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-12.png)
+![7-12](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-12.png)
 - 성능을 조금 더 끌어올릴 수 있지만 훈련 시간과 시스템 복잡성 측면에서 비용이 증가
