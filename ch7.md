@@ -15,7 +15,7 @@
 - 간접 투표가 직접 투표보다 성능이 높음
 
 ## 7.2 배깅과 페이스팅
-![7-4](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-2.png)
+![7-4](https://github.com/windbella/hands-on-machine-learning/blob/main/ch7/7-4.png)
 - 다양한 분류기를 얻는 다른 방법으로 훈련 세트의 서브셋을 랜덤으로 구성하여 분류기를 각기 다르게 학습 시키는 것
 - 배깅(bagging) : 중복을 허용하여 샘플링 하는 방식 (bootstrap aggregating)
 - 페이스팅(pasting) : 중복을 허용하지 않고 샘플링 하는 방식
